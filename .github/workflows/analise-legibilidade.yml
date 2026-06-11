@@ -1,0 +1,23 @@
+name: Análise de Legibilidade
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  analisar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Rodar análise de legibilidade
+        uses: AliceSales/legibilidade-action@main
+        with:
+          api-url: https://modelo-api-11wr.onrender.com
