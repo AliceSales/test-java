@@ -1,25 +1,13 @@
-public class Main {
+class Snippet01 {
+    static int sumPositive(int[] values) {
+        int total = 0;
 
-    // TODO: Melhorar este método futuramente
-
-    public static void main(String[] args) {
-
-        System.out.println("Iniciando aplicação");
-
-        String nome = "Alice";
-
-        System.out.println("Olá " + nome);
-
-        int soma = 0;
-        calcular(soma);
-    }
-
-    public static void calcular(int soma) {
-
-        for (int i = 0; i < 10; i++) {
-            soma += i;
+        for (int value : values) {
+            if (value > 0) {
+                total += value;
+            }
         }
 
-        System.out.println("Resultado: " + soma);
+        return total;
     }
 }
