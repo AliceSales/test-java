@@ -10,12 +10,11 @@ public class Main {
 
         System.out.println("Olá " + nome);
 
-        calcular();
+        int soma = 0;
+        calcular(soma);
     }
 
-    public static void calcular() {
-
-        int soma = 0;
+    public static void calcular(int soma) {
 
         for (int i = 0; i < 10; i++) {
             soma += i;
