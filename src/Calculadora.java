@@ -1,18 +1,21 @@
 public class Calculadora {
 
-    public int somar(int primeiroNumero, int segundoNumero) {
-        return primeiroNumero + segundoNumero;
+    public double calcularPrecoFinal(double valorProduto, double percentualDesconto, double percentualImposto) {
+        double valorComDesconto = valorProduto - calcularDesconto(valorProduto, percentualDesconto);
+        double valorDoImposto = calcularImposto(valorComDesconto, percentualImposto);
+
+        return valorComDesconto + valorDoImposto;
     }
 
-    public int subtrair(int primeiroNumero, int segundoNumero) {
-        return primeiroNumero - segundoNumero;
+    public double calcularDesconto(double valorProduto, double percentualDesconto) {
+        return valorProduto * percentualDesconto;
     }
 
-    public double dividir(int dividendo, int divisor) {
-        if (divisor == 0) {
-            throw new IllegalArgumentException("Divisor não pode ser zero");
-        }
+    public double calcularImposto(double valorBase, double percentualImposto) {
+        return valorBase * percentualImposto;
+    }
 
-        return (double) dividendo / divisor;
+    public boolean valorEstaDentroDoLimite(double valorCompra, double limitePermitido) {
+        return valorCompra <= limitePermitido;
     }
 }
